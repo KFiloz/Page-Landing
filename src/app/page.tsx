@@ -1,9 +1,9 @@
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Solutions from "@/components/Solutions";
-import Benefits from "@/components/Benefits";
-import CTA from "@/components/CTA";
-import Footer from "@/components/Footer";
+import Hero from "../components/Hero";
+import About from "../components/About";
+import Solutions from "../components/Solutions";
+import Benefits from "../components/Benefits";
+import CTA from "../components/CTA";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
