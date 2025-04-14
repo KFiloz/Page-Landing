@@ -4,7 +4,7 @@ export const metadata = {
   title: "Ktronika - Soluciones IoT",
   description: "Transformamos datos en decisiones inteligentes con IoT.",
   icons: {
-    icon: "/favicon.ico", // ubicación recomendada
+    icon: "/favicon.ico", 
   },
 };
 
