@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
           {/* Logo con tamaño 300x120 */}
           <Link href="/" className="block w-[300px] h-[120px] relative">
             <Image
-              src="/images/Ktronika_resized.png"
+              src="/images/Ktronika.png"
               alt="Ktronika Logo"
               width={300}
               height={120}
