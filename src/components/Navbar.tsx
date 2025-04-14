@@ -10,18 +10,18 @@ const Navbar: React.FC = () => {
     <header>
       <nav className="fixed z-50 p-4 w-full border-b border-solid bg-white shadow">
         <div className="flex justify-between items-center mx-auto max-w-[1200px]">
-          {/* Logo */}
-          <Link href="/" className="w-[150px] h-[40px] block">
+          {/* Logo con tamaño 300x120 */}
+          <Link href="/" className="block w-[300px] h-[120px] relative">
             <Image
-              src="/images/Ktronika.png"
-              alt="Ktronika"
+              src="/images/Ktronika_resized.png"
+              alt="Ktronika Logo"
               width={300}
-              height={122}
+              height={120}
               priority
             />
           </Link>
 
-          {/* Botón hamburguesa */}
+          {/* Botón hamburguesa en móvil */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="sm:hidden text-gray-800 focus:outline-none"
@@ -51,21 +51,39 @@ const Navbar: React.FC = () => {
             </svg>
           </button>
 
-          {/* Menú (oculto en móvil) */}
-          <ul className="hidden sm:flex gap-8">
+          {/* Menú horizontal */}
+          <ul className="hidden sm:flex gap-8 items-center">
             <li><a href="#" className="text-gray-800">Inicio</a></li>
             <li><a href="#" className="text-gray-800">Servicios</a></li>
-            <li><a href="#" className="text-gray-800">Dashboard</a></li>
+            <li>
+              <a
+                href="https://grafana.ktronika.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-800"
+              >
+                Dashboard
+              </a>
+            </li>
             <li><a href="#" className="text-gray-800">Contacto</a></li>
           </ul>
         </div>
 
-        {/* Menú desplegable móvil */}
+        {/* Menú móvil */}
         {menuOpen && (
           <ul className="sm:hidden mt-4 space-y-4 px-4">
             <li><a href="#" className="block text-gray-800">Inicio</a></li>
             <li><a href="#" className="block text-gray-800">Servicios</a></li>
-            <li><a href="#" className="block text-gray-800">Dashboard</a></li>
+            <li>
+              <a
+                href="https://grafana.ktronika.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-gray-800"
+              >
+                Dashboard
+              </a>
+            </li>
             <li><a href="#" className="block text-gray-800">Contacto</a></li>
           </ul>
         )}
