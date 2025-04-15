@@ -6,7 +6,7 @@ const BlogHero = () => {
     <section className="flex flex-col md:flex-row items-center gap-8 mb-12">
       <div className="w-32 h-32 relative">
         <Image
-          src="/images/ingeniero.jpg"
+          src="/images/ingeniero.png"
           alt="Ingeniero"
           fill
           className="rounded-full object-cover"
