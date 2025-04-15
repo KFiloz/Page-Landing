@@ -1,22 +1,21 @@
-"use client";
-import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header>
-     <nav className="fixed z-50 p-4 w-full border-b border-solid bg-[#0D47A1] shadow text-white">
-        <div className="flex justify-between items-center mx-auto max-w-[1200px] px-4 h-[50px]">
-          {/* Logo con tamaño 300x120 */}
-          <Link href="/" className="block w-[300px] h-[50px] relative">
+      <nav className="fixed z-50 p-4 w-full border-b border-solid bg-[#0D47A1]/80 shadow text-white backdrop-blur-md">
+        <div className="flex justify-between items-center mx-auto max-w-[1200px]">
+          {/* Logo */}
+          <Link href="/" className="block w-[300px] h-[40px] relative">
             <Image
               src="/images/Ktronika2.png"
               alt="Ktronika Logo"
               width={300}
-              height={50}
+              height={40}
               priority
             />
           </Link>
@@ -24,7 +23,7 @@ const Navbar: React.FC = () => {
           {/* Botón hamburguesa en móvil */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="sm:hidden text-gray-800 focus:outline-none"
+            className="sm:hidden text-white focus:outline-none"
           >
             <svg
               className="w-6 h-6"
@@ -51,40 +50,40 @@ const Navbar: React.FC = () => {
             </svg>
           </button>
 
-          {/* Menú horizontal */}
+          {/* Menú horizontal (escritorio) */}
           <ul className="hidden sm:flex gap-8 items-center">
-            <li><a href="#" className="text-gray-800">Inicio</a></li>
-            <li><a href="#" className="text-gray-800">Servicios</a></li>
+            <li><a href="#" className="text-white hover:text-gray-200">Inicio</a></li>
+            <li><a href="#" className="text-white hover:text-gray-200">Servicios</a></li>
             <li>
               <a
                 href="https://grafana.ktronika.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-800"
+                className="text-white hover:text-gray-200"
               >
                 Dashboard
               </a>
             </li>
-            <li><a href="#" className="text-gray-800">Contacto</a></li>
+            <li><a href="#" className="text-white hover:text-gray-200">Contacto</a></li>
           </ul>
         </div>
 
         {/* Menú móvil */}
         {menuOpen && (
           <ul className="sm:hidden mt-4 space-y-4 px-4">
-            <li><a href="#" className="block text-gray-800">Inicio</a></li>
-            <li><a href="#" className="block text-gray-800">Servicios</a></li>
+            <li><a href="#" className="block text-white hover:text-gray-200">Inicio</a></li>
+            <li><a href="#" className="block text-white hover:text-gray-200">Servicios</a></li>
             <li>
               <a
                 href="https://grafana.ktronika.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-gray-800"
+                className="block text-white hover:text-gray-200"
               >
                 Dashboard
               </a>
             </li>
-            <li><a href="#" className="block text-gray-800">Contacto</a></li>
+            <li><a href="#" className="block text-white hover:text-gray-200">Contacto</a></li>
           </ul>
         )}
       </nav>
