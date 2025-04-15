@@ -8,12 +8,12 @@ const Navbar: React.FC = () => {
 
   return (
     <header>
-     <nav className="fixed z-50 p-4 w-full border-b border-solid bg-[#E0F7FA] shadow">
+     <nav className="fixed z-50 p-4 w-full border-b border-solid bg-[#0D47A1] shadow text-white">
         <div className="flex justify-between items-center mx-auto max-w-[1200px] px-4 h-[50px]">
           {/* Logo con tamaño 300x120 */}
           <Link href="/" className="block w-[300px] h-[50px] relative">
             <Image
-              src="/images/Ktronika.png"
+              src="/images/Ktronika2.png"
               alt="Ktronika Logo"
               width={300}
               height={50}
