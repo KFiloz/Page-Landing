@@ -15,7 +15,7 @@ const Navbar = () => {
               src="/images/Ktronika2.png"
               alt="Ktronika Logo"
               width={150}
-              height={5s0}
+              height={50}
               priority
             />
           </Link>
