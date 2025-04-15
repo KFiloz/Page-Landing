@@ -36,7 +36,7 @@ const CustomCursor = () => {
       transition={{ type: "spring", stiffness: 400, damping: 30 }}
     >
       <div
-        className="w-10 h-10 rounded-full border-2 border-[#0D47A1] bg-[#0D47A1]/20"
+        className="w-20 h-20 rounded-full border-2 border-[#0D47A1]/20 bg-[#0D47A1]/20"
       />
     </motion.div>
   );
