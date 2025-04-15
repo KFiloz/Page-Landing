@@ -52,8 +52,8 @@ const Navbar = () => {
 
           {/* Menú horizontal (escritorio) */}
           <ul className="hidden sm:flex gap-8 items-center">
-            <li><a href="#" className="text-white hover:text-gray-200">Inicio</a></li>
-            <li><a href="#" className="text-white hover:text-gray-200">Servicios</a></li>
+            <li><Link href="/" className="text-white hover:text-gray-200">Inicio</Link></li>
+            <li><Link href="#" className="text-white hover:text-gray-200">Servicios</Link></li>
             <li>
               <a
                 href="https://grafana.ktronika.com"
@@ -64,15 +64,16 @@ const Navbar = () => {
                 Dashboard
               </a>
             </li>
-            <li><a href="#" className="text-white hover:text-gray-200">Contacto</a></li>
+            <li><Link href="#" className="text-white hover:text-gray-200">Contacto</Link></li>
+            <li><Link href="/blog" className="text-white hover:text-gray-200">Blog</Link></li>
           </ul>
         </div>
 
         {/* Menú móvil */}
         {menuOpen && (
           <ul className="sm:hidden mt-4 space-y-4 px-4">
-            <li><a href="#" className="block text-white hover:text-gray-200">Inicio</a></li>
-            <li><a href="#" className="block text-white hover:text-gray-200">Servicios</a></li>
+            <li><Link href="/" className="block text-white hover:text-gray-200">Inicio</Link></li>
+            <li><Link href="#" className="block text-white hover:text-gray-200">Servicios</Link></li>
             <li>
               <a
                 href="https://grafana.ktronika.com"
@@ -83,7 +84,8 @@ const Navbar = () => {
                 Dashboard
               </a>
             </li>
-            <li><a href="#" className="block text-white hover:text-gray-200">Contacto</a></li>
+            <li><Link href="#" className="block text-white hover:text-gray-200">Contacto</Link></li>
+            <li><Link href="/blog" className="block text-white hover:text-gray-200">Blog</Link></li>
           </ul>
         )}
       </nav>
