@@ -8,7 +8,8 @@ const HeroSection: React.FC = () => {
         <div className="flex gap-5 max-md:flex-col">
           <div className="w-6/12 max-md:w-full">
             <div className="pt-12 max-md:text-center">
-              <h2 className="mb-6 text-6xl font-extrabold leading-tight text-gray-800">
+              {/* Título actualizado con hover-target */}
+              <h2 className="hover-target mb-6 text-6xl font-extrabold leading-tight text-gray-800">
                 Optimiza tu negocio con IoT Inteligente
               </h2>
               <p className="mb-8 text-xl text-gray-600">
@@ -16,7 +17,7 @@ const HeroSection: React.FC = () => {
                 en tiempo real, automatización inteligente y análisis predictivo
                 para maximizar tu eficiencia operativa.
               </p>
-              <button className="px-8 py-4 font-semibold bg-blue-600 rounded-lg transition-all duration-200 text-white">
+              <button className="hover-target px-8 py-4 font-semibold bg-blue-600 rounded-lg transition-all duration-200 text-white">
                 Ver Plataforma
               </button>
             </div>

@@ -1,22 +1,24 @@
 import "./globals.css";
+import CustomCursor from "@/components/CustomCursor";
 
 export const metadata = {
   title: "Ktronika - Soluciones IoT",
   description: "Transformamos datos en decisiones inteligentes con IoT.",
   icons: {
-    icon: "/favicon.ico", 
+    icon: "/favicon.ico",
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body className="relative">
+        <CustomCursor />
+        {children}
+      </body>
     </html>
   );
 }
-
-
 
 
 

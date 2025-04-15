@@ -10,12 +10,12 @@ const Navbar = () => {
       <nav className="fixed z-50 p-4 w-full border-b border-solid bg-[#0D47A1]/80 shadow text-white backdrop-blur-md">
         <div className="flex justify-between items-center mx-auto max-w-[1200px]">
           {/* Logo */}
-          <Link href="/" className="block w-[300px] h-[40px] relative">
+          <Link href="/" className="block w-[150px] h-[50px] relative">
             <Image
               src="/images/Ktronika2.png"
               alt="Ktronika Logo"
-              width={300}
-              height={40}
+              width={150}
+              height={5s0}
               priority
             />
           </Link>
