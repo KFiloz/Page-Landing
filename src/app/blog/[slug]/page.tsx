@@ -1,18 +1,24 @@
+import { type Metadata } from "next";
 import { getPostHtml, getAllPosts } from "@/lib/blog";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
-export const dynamic = "auto"; // o "force-static" si estás seguro que no cambia
+// Dinámico pero con posibilidad de usar generación estática
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
   return posts.map((post) => ({ slug: post.slug }));
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  // ⚠️ Aquí accedemos directamente al parámetro dentro del mismo scope async
-  const post = await getPostHtml(params.slug);
+type PageProps = {
+  params: {
+    slug: string;
+  };
+};
 
+export default async function BlogPostPage({ params }: PageProps) {
+  const post = await getPostHtml(params.slug);
   if (!post) return notFound();
 
   const { metadata, contentHtml } = post;
