@@ -2,6 +2,8 @@ import { getPostHtml, getAllPosts } from "@/lib/blog";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
+export const dynamic = "auto"; // o "force-static" si estás seguro que no cambia
+
 export async function generateStaticParams() {
   const posts = getAllPosts();
   return posts.map((post) => ({ slug: post.slug }));
