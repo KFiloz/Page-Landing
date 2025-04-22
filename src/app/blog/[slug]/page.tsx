@@ -1,24 +1,22 @@
-import { type Metadata } from "next";
 import { getPostHtml, getAllPosts } from "@/lib/blog";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-
-// Dinámico pero con posibilidad de usar generación estática
-export const dynamicParams = true;
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
   return posts.map((post) => ({ slug: post.slug }));
 }
 
-type PageProps = {
+type Props = {
   params: {
     slug: string;
   };
 };
 
-export default async function BlogPostPage({ params }: PageProps) {
-  const post = await getPostHtml(params.slug);
+export default async function BlogPostPage(props: Props) {
+  const { slug } = props.params;
+  const post = await getPostHtml(slug);
+
   if (!post) return notFound();
 
   const { metadata, contentHtml } = post;
@@ -34,15 +32,8 @@ export default async function BlogPostPage({ params }: PageProps) {
           className="w-full rounded-lg mb-6 object-cover"
         />
       )}
-
-      <h1 className="text-3xl font-bold text-[#0D47A1] mb-2">
-        {metadata.title}
-      </h1>
-
-      <p className="text-sm text-gray-500 mb-6">
-        {metadata.author} · {metadata.date}
-      </p>
-
+      <h1 className="text-3xl font-bold text-[#0D47A1] mb-2">{metadata.title}</h1>
+      <p className="text-sm text-gray-500 mb-6">{metadata.author} · {metadata.date}</p>
       <div
         className="prose prose-blue max-w-none"
         dangerouslySetInnerHTML={{ __html: contentHtml }}
