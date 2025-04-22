@@ -3,32 +3,41 @@ import React from "react";
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="pt-32 pb-20">
-      <div className="px-8 mx-auto max-w-[1200px]">
-        <div className="flex gap-5 max-md:flex-col">
-          <div className="w-6/12 max-md:w-full">
-            <div className="pt-12 max-md:text-center">
-              {/* Título actualizado con hover-target */}
-              <h2 className="hover-target mb-6 text-6xl font-extrabold leading-tight text-gray-800">
-                Optimiza tu negocio con IoT Inteligente
-              </h2>
-              <p className="mb-8 text-xl text-gray-600">
-                Transforma tu industria con soluciones IoT avanzadas. Monitoreo
-                en tiempo real, automatización inteligente y análisis predictivo
-                para maximizar tu eficiencia operativa.
-              </p>
-              <button className="hover-target px-8 py-4 font-semibold bg-blue-600 rounded-lg transition-all duration-200 text-white">
-                Ver Plataforma
-              </button>
-            </div>
-          </div>
-          <div className="w-6/12 max-md:w-full">
-            <img
-              alt="IoT Dashboard Interface"
-              src="/images/IOT.png"
-              className="object-cover w-full rounded-xl shadow-xl aspect-square"
-            />
-          </div>
+    <section
+      id="inicio"
+      className="py-16 md:py-24 bg-gray-50"
+    >
+      <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        {/* Texto lado izquierdo */}
+        <div className="text-center md:text-left">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4">
+            Maximiza la Eficiencia de tu{" "}
+            <span className="text-blue-600">Agroindustria</span> con IoT y
+            LoRaWAN
+          </h1>
+          <p className="text-lg md:text-xl text-gray-600 mb-8">
+            Reduce costos, optimiza recursos (agua, energía, insumos) y toma
+            decisiones basadas en datos precisos con nuestras soluciones
+            IoT/IIoT a medida y conectividad LoRaWAN de largo alcance.
+          </p>
+          <a
+            href="#contacto"
+            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 shadow-lg text-lg"
+          >
+            Solicita una Demostración Personalizada
+          </a>
+          <p className="text-sm text-gray-500 mt-4">
+            Descubre el potencial de ahorro y productividad para tu operación.
+          </p>
+        </div>
+
+        {/* Imagen lado derecho */}
+        <div className="flex justify-center items-center">
+          <img
+            src="/images/IOT.png"
+            alt="IoT Dashboard Interface"
+            className="rounded-lg shadow-xl w-full max-w-md md:max-w-full"
+          />
         </div>
       </div>
     </section>

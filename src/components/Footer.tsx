@@ -6,8 +6,8 @@ const Footer: React.FC = () => {
     <footer className="px-0 py-16 bg-gray-800 text-white">
       <div className="flex justify-between items-center px-8 mx-auto max-w-[1200px] max-sm:flex-col max-sm:gap-8 max-sm:text-center">
         <div>
-          <h4 className="mb-4 text-2xl font-bold">IoTech</h4>
-          <p className="text-gray-400">© 2024 IoTech. Todos los derechos reservados.</p>
+          <h4 className="mb-4 text-2xl font-bold">Ktronika</h4>
+          <p className="text-gray-400">© 2024 Ktronika SAS. Todos los derechos reservados.</p>
         </div>
         <nav>
           <ul className="flex gap-6">

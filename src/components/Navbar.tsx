@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -8,32 +7,53 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header>
-      <nav className="fixed z-50 p-4 w-full border-b border-solid bg-[#0D47A1]/80 shadow text-white backdrop-blur-md">
-        <div className="flex justify-between items-center mx-auto max-w-[1200px]">
-          {/* Logo */}
-          <Link href="/" className="block w-[150px] h-[50px] relative">
-            <Image
-              src="/images/Ktronika2.png"
-              alt="Ktronika Logo"
-              width={150}
-              height={50}
-              priority
-            />
-          </Link>
+    <header className="bg-[#154EBF]/80 backdrop-blur-md shadow-md sticky top-0 z-50">
+      <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
+        <Link
+          href="/"
+          className="text-2xl font-bold text-white flex items-center gap-2"
+        >
+          <Image
+            src="/images/Ktronika2.png"
+            alt="Ktronika Logo"
+            width={150}
+            height={50}
+            priority
+          />
+        </Link>
 
-          {/* Botón hamburguesa en móvil */}
+        {/* Menú escritorio */}
+        <div className="hidden md:flex space-x-6 items-center">
+          <a href="#inicio" className="text-white hover:text-blue-100 transition duration-300">
+            Inicio
+          </a>
+          <a href="#solucion" className="text-white hover:text-blue-100 transition duration-300">
+            Nuestra Solución
+          </a>
+          <a href="#beneficios" className="text-white hover:text-blue-100 transition duration-300">
+            Beneficios
+          </a>
+          <a href="#casos-exito" className="text-white hover:text-blue-100 transition duration-300">
+            Casos de Éxito
+          </a>
+          <a href="#por-que-nosotros" className="text-white hover:text-blue-100 transition duration-300">
+            Por Qué Elegirnos
+          </a>
+          <a
+            href="#contacto"
+            className="bg-white hover:bg-blue-100 text-[#154EBF] font-semibold py-2 px-4 rounded-lg transition duration-300 shadow"
+          >
+            Contactar
+          </a>
+        </div>
+
+        {/* Botón hamburguesa */}
+        <div className="md:hidden">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="sm:hidden text-white focus:outline-none"
+            className="text-white focus:outline-none"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {menuOpen ? (
                 <path
                   strokeLinecap="round"
@@ -51,48 +71,28 @@ const Navbar = () => {
               )}
             </svg>
           </button>
-
-          {/* Menú horizontal (escritorio) */}
-          <ul className="hidden sm:flex gap-8 items-center">
-            <li><Link href="/" className="text-white hover:text-gray-200">Inicio</Link></li>
-            <li><Link href="#" className="text-white hover:text-gray-200">Servicios</Link></li>
-            <li>
-              <a
-                href="https://grafana.ktronika.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-gray-200"
-              >
-                Dashboard
-              </a>
-            </li>
-            <li><Link href="#" className="text-white hover:text-gray-200">Contacto</Link></li>
-            <li><Link href="/blog" className="text-white hover:text-gray-200">Blog</Link></li>
-          </ul>
         </div>
-
-        {/* Menú móvil */}
-        {menuOpen && (
-          <ul className="sm:hidden mt-4 space-y-4 px-4">
-            <li><Link href="/" className="block text-white hover:text-gray-200">Inicio</Link></li>
-            <li><Link href="#" className="block text-white hover:text-gray-200">Servicios</Link></li>
-            <li>
-              <a
-                href="https://grafana.ktronika.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-white hover:text-gray-200"
-              >
-                Dashboard
-              </a>
-            </li>
-            <li><Link href="#" className="block text-white hover:text-gray-200">Contacto</Link></li>
-            <li><Link href="/blog" className="block text-white hover:text-gray-200">Blog</Link></li>
-          </ul>
-        )}
       </nav>
+
+      {/* Menú móvil */}
+      {menuOpen && (
+        <div className="md:hidden flex flex-col bg-[#154EBF] px-6 py-4 space-y-4 text-white">
+          <a href="#inicio" className="hover:text-blue-100 transition duration-300">Inicio</a>
+          <a href="#solucion" className="hover:text-blue-100 transition duration-300">Nuestra Solución</a>
+          <a href="#beneficios" className="hover:text-blue-100 transition duration-300">Beneficios</a>
+          <a href="#casos-exito" className="hover:text-blue-100 transition duration-300">Casos de Éxito</a>
+          <a href="#por-que-nosotros" className="hover:text-blue-100 transition duration-300">Por Qué Elegirnos</a>
+          <a
+            href="#contacto"
+            className="bg-white text-[#154EBF] text-center py-2 px-4 rounded-lg shadow hover:bg-blue-100 transition duration-300"
+          >
+            Contactar
+          </a>
+        </div>
+      )}
     </header>
   );
 };
 
 export default Navbar;
+

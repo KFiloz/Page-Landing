@@ -1,6 +1,6 @@
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
-import Navbar from "@/components/Navbar"; // ✅ Importar el navbar
+import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: "Ktronika - Soluciones IoT",
@@ -12,13 +12,12 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es">
+    <html lang="es" className="scroll-smooth">
       <body className="relative">
-        <Navbar />               {/* ✅ Navbar en todas las páginas */}
+        <Navbar />
         <CustomCursor />
         {children}
       </body>
     </html>
   );
 }
-

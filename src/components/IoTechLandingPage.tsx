@@ -1,16 +1,24 @@
 "use client";
 import React from "react";
-import Navbar from "./Navbar";
 import HeroSection from "./HeroSection";
-import BenefitsSection from "./BenefitsSection";
+import RetosIoT from "./RetosIoT";
+import NuestraSolucion from "./NuestraSolucion";
+import Beneficios from "./Beneficios";
+import CasosExito from "@/components/CasosExito";
+import PorqueElegirnos from "@/components/PorqueElegirnos";
+import Contactar from "@/components/Contactar";
 import Footer from "./Footer";
 
 const IoTechLandingPage: React.FC = () => {
   return (
     <div>
-      <Navbar />
       <HeroSection />
-      <BenefitsSection />
+      <RetosIoT />
+      <NuestraSolucion />
+      <Beneficios />
+      <CasosExito />
+      <PorqueElegirnos />
+      <Contactar />
       <Footer />
     </div>
   );

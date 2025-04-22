@@ -1,8 +1,13 @@
-import BlogHero from "./components/BlogHeroSection";
-import BlogSidebar from "./components/BlogSidebar";
-import BlogPostCard from "./components/BlogPostCard";
+import BlogHero from "../blog/components/BlogHeroSection";
+import BlogSidebar from "../blog/components/BlogSidebar";
+import BlogPostCard from "../blog/components/BlogPostCard";
+import { getPostHtml, getAllPosts } from "@/lib/blog";
 
-const BlogPage = () => {
+
+
+export default function BlogPage() {
+  const posts = getAllPosts();
+
   return (
     <div className="pt-32 pb-20 px-6 max-w-[1200px] mx-auto">
       <BlogHero />
@@ -11,22 +16,19 @@ const BlogPage = () => {
         <BlogSidebar />
 
         <main className="w-full md:w-3/4 space-y-8">
-          <BlogPostCard
-            title="Cómo optimizar una red LoRaWAN para monitoreo agrícola"
-            excerpt="Aprende las mejores prácticas para desplegar sensores IoT en fincas, configurar gateways y enviar datos en tiempo real a la nube..."
-            author="Camilo Ortega"
-            date="15 de abril de 2025"
-          />
-          <BlogPostCard
-            title="Automatización de procesos en plantas de filtración"
-            excerpt="Conoce cómo mejorar la eficiencia y trazabilidad de procesos industriales usando PLCs, SCADA y análisis de datos."
-            author="Camilo Ortega"
-            date="10 de abril de 2025"
-          />
+          {posts.map((post) => (
+            <BlogPostCard
+              key={post.slug}
+              title={post.metadata.title}
+              excerpt={post.metadata.excerpt || "Contenido del artículo..."}
+              author={post.metadata.author}
+              date={post.metadata.date}
+              slug={post.slug}
+              image={post.metadata.mainImage}
+            />
+          ))}
         </main>
       </div>
     </div>
   );
-};
-
-export default BlogPage;
+}
