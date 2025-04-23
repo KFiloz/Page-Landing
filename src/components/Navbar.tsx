@@ -2,17 +2,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useNavigateWithHash } from "@/utils/navigateWithHash";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const goToSection = useNavigateWithHash();
 
   return (
     <header className="bg-[#154EBF]/80 backdrop-blur-md shadow-md sticky top-0 z-50">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <Link
-          href="/"
-          className="text-2xl font-bold text-white flex items-center gap-2"
-        >
+        <Link href="/" className="text-2xl font-bold text-white flex items-center gap-2">
           <Image
             src="/images/Ktronika2.png"
             alt="Ktronika Logo"
@@ -22,32 +21,30 @@ const Navbar = () => {
           />
         </Link>
 
-        {/* Menú escritorio */}
         <div className="hidden md:flex space-x-6 items-center">
-          <Link href="/#inicio" className="text-white hover:text-blue-100 transition duration-300">
+          <button onClick={() => goToSection('#inicio')} className="text-white hover:text-blue-100 transition">
             Inicio
-          </Link>
-          <Link href="/#solucion" className="text-white hover:text-blue-100 transition duration-300">
+          </button>
+          <button onClick={() => goToSection('#solucion')} className="text-white hover:text-blue-100 transition">
             Nuestra Solución
-          </Link>
-          <Link href="/#beneficios" className="text-white hover:text-blue-100 transition duration-300">
+          </button>
+          <button onClick={() => goToSection('#beneficios')} className="text-white hover:text-blue-100 transition">
             Beneficios
-          </Link>
-          <Link href="/#casos-exito" className="text-white hover:text-blue-100 transition duration-300">
+          </button>
+          <button onClick={() => goToSection('#casos-exito')} className="text-white hover:text-blue-100 transition">
             Casos de Éxito
-          </Link>
-          <Link href="/#por-que-nosotros" className="text-white hover:text-blue-100 transition duration-300">
+          </button>
+          <button onClick={() => goToSection('#por-que-nosotros')} className="text-white hover:text-blue-100 transition">
             Por Qué Elegirnos
-          </Link>
-          <Link
-            href="/#contacto"
-            className="bg-white hover:bg-blue-100 text-[#154EBF] font-semibold py-2 px-4 rounded-lg transition duration-300 shadow"
+          </button>
+          <button
+            onClick={() => goToSection('#contacto')}
+            className="bg-white text-[#154EBF] font-semibold py-2 px-4 rounded-lg hover:bg-blue-100 transition shadow"
           >
             Contactar
-          </Link>
+          </button>
         </div>
 
-        {/* Botón hamburguesa */}
         <div className="md:hidden">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -55,39 +52,28 @@ const Navbar = () => {
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {menuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               )}
             </svg>
           </button>
         </div>
       </nav>
 
-      {/* Menú móvil */}
       {menuOpen && (
         <div className="md:hidden flex flex-col bg-[#154EBF] px-6 py-4 space-y-4 text-white">
-          <Link href="/#inicio" className="hover:text-blue-100 transition duration-300">Inicio</Link>
-          <Link href="/#solucion" className="hover:text-blue-100 transition duration-300">Nuestra Solución</Link>
-          <Link href="/#beneficios" className="hover:text-blue-100 transition duration-300">Beneficios</Link>
-          <Link href="/#casos-exito" className="hover:text-blue-100 transition duration-300">Casos de Éxito</Link>
-          <Link href="/#por-que-nosotros" className="hover:text-blue-100 transition duration-300">Por Qué Elegirnos</Link>
-          <Link
-            href="/#contacto"
-            className="bg-white text-[#154EBF] text-center py-2 px-4 rounded-lg shadow hover:bg-blue-100 transition duration-300"
+          <button onClick={() => goToSection('#inicio')} className="hover:text-blue-100">Inicio</button>
+          <button onClick={() => goToSection('#solucion')} className="hover:text-blue-100">Nuestra Solución</button>
+          <button onClick={() => goToSection('#beneficios')} className="hover:text-blue-100">Beneficios</button>
+          <button onClick={() => goToSection('#casos-exito')} className="hover:text-blue-100">Casos de Éxito</button>
+          <button onClick={() => goToSection('#por-que-nosotros')} className="hover:text-blue-100">Por Qué Elegirnos</button>
+          <button
+            onClick={() => goToSection('#contacto')}
+            className="bg-white text-[#154EBF] py-2 px-4 rounded-lg shadow hover:bg-blue-100"
           >
             Contactar
-          </Link>
+          </button>
         </div>
       )}
     </header>
