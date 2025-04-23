@@ -43,7 +43,7 @@ Uno de los errores más comunes al hablar de tecnologías de comunicación IoT e
 
 ## Diferencias Clave entre LoRa y LoRaWAN
 
-![Tabla comparativa entre LoRa y LoRaWAN](/images/Tabla-Lora.png)
+![Tabla comparativa entre LoRa y LoRaWAN](/images/Tabla-Lora1.png)
 
 ---
 
