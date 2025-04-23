@@ -12,7 +12,7 @@ const CasosExito = () => {
           {/* Caso 1 */}
           <div className="bg-white p-6 rounded-lg shadow-md">
             <Image
-              src="/images/caso1.png"
+              src="/images/Caso1.png"
               alt="Caso Éxito 1"
               width={400}
               height={300}
@@ -28,7 +28,7 @@ const CasosExito = () => {
           {/* Caso 2 */}
           <div className="bg-white p-6 rounded-lg shadow-md">
             <Image
-              src="/images/caso2.png"
+              src="/images/Caso2.png"
               alt="Caso Éxito 2"
               width={400}
               height={300}
@@ -44,7 +44,7 @@ const CasosExito = () => {
           {/* Caso 3 */}
           <div className="bg-white p-6 rounded-lg shadow-md">
             <Image
-              src="/images/caso3.png"
+              src="/images/Caso3.png"
               alt="Caso Éxito 3"
               width={400}
               height={300}

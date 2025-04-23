@@ -9,7 +9,7 @@ const NuestraSolucion: React.FC = () => {
         {/* Imagen dashboard */}
         <div className="order-2 md:order-1 flex justify-center items-center">
           <Image
-            src="/images/dashboard.png"
+            src="/images/Dashboard.png"
             alt="Dashboard Agro-IoT"
             width={600}
             height={400}
