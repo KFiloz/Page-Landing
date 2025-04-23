@@ -1,6 +1,6 @@
 ---
 title: "¿Cuál es la diferencia entre LoRa y LoRaWAN?"
-date: "2025-04-23"
+date: "2025-04-22"
 author: "Camilo Ortega"
 mainImage: "/images/lora-vs-lorawan.png"
 excerpt: "Aunque suelen confundirse, LoRa y LoRaWAN no son lo mismo. Esta entrada explica sus diferencias clave en arquitectura, aplicación y propósito dentro de una red IoT."
