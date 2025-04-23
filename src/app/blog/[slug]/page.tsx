@@ -1,12 +1,10 @@
 import { getPostHtml, getAllPosts } from "@/lib/blog";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-// Import PageProps for correct typing of component props in App Router
-// Using type-only import for PageProps from "next"
-import type { PageProps } from "next";
+// Eliminamos la importación de PageProps ya que parece ser la fuente del error en tu entorno.
+// import type { PageProps } from "next"; // Eliminado
 
-// Definimos un tipo local para las props del componente, incluyendo los parámetros de ruta.
-// Eliminamos la definición de tipo 'Props' local anterior, ya que volveremos a usar PageProps.
+// Eliminamos la definición de tipo local 'Props' anterior.
 // type Props = {
 //   params: {
 //     slug: string;
@@ -19,13 +17,13 @@ export async function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
 }
 
-// Define the BlogPostPage component using the standard PageProps type for dynamic routes
-// PageProps is generic, specify the shape of the params using a more general type
+// Definimos el componente BlogPostPage y tipamos directamente el objeto 'params' en la firma.
+// Esto a menudo es suficiente para que TypeScript infiera la estructura correcta en Next.js App Router.
 export default async function BlogPostPage({
   params, // params will have the shape { slug: string } based on the route and generateStaticParams
-}: PageProps<{ [param: string]: string | string[] }>) { // Usamos el tipo PageProps estándar para params dinámicos
+}: { params: { slug: string } }) { // Tipado directo del objeto params
   // We know from generateStaticParams and the route structure that 'params.slug' will be a string
-  const slug = params.slug as string; // Cast to string for explicit type safety in usage
+  const slug = params.slug; // No necesitamos el 'as string' si el tipado directo funciona correctamente
 
   // Fetch the blog post content based on the slug from the URL params
   const post = await getPostHtml(slug);
