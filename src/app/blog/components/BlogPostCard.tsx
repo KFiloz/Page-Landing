@@ -1,35 +1,60 @@
-
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 
 type Props = {
-  title: string;
-  excerpt: string;
-  author: string;
-  date: string;
   slug: string;
-  image: string;
+  title: string;
+  date: string;
+  author: string;
+  mainImage?: string;
+  excerpt?: string;
 };
 
-const BlogPostCard = ({ title, excerpt, author, date, slug, image }: Props) => {
+const BlogPostCard = ({ slug, title, date, author, mainImage, excerpt }: Props) => {
   return (
-    <Link href={`/blog/${slug}`}>
-      <div className="p-6 border rounded-lg hover:shadow transition-all bg-white cursor-pointer">
-        <Image
-          src={image}
-          alt={title}
-          width={800}
-          height={400}
-          className="rounded-lg mb-4 object-cover w-full h-48"
-        />
-        <h3 className="text-xl font-bold text-[#0D47A1] mb-2">{title}</h3>
-        <p className="text-gray-700 mb-3">{excerpt}</p>
-        <div className="text-sm text-gray-500">
-          Publicado por {author} · {date}
+    <article className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition duration-300">
+      {mainImage && (
+        <Link href={`/blog/${slug}`}>
+          <div className="relative h-56 w-full">
+            <Image
+              src={mainImage}
+              alt={title}
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        </Link>
+      )}
+
+      <div className="p-6">
+        <p className="text-xs text-gray-500 mb-1">
+          {date} • Por {author}
+        </p>
+
+        <h2 className="text-2xl font-bold text-gray-900 hover:text-blue-700 transition mb-2">
+          <Link href={`/blog/${slug}`}>{title}</Link>
+        </h2>
+
+        {excerpt && (
+          <p className="text-gray-600 mb-4">
+            {excerpt}
+          </p>
+        )}
+
+        <div className="text-right">
+          <Link
+            href={`/blog/${slug}`}
+            className="text-sm text-blue-700 font-semibold hover:underline"
+          >
+            Leer artículo →
+          </Link>
         </div>
       </div>
-    </Link>
+    </article>
   );
 };
 
 export default BlogPostCard;
+

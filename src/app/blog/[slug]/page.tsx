@@ -1,41 +1,40 @@
+// src/app/blog/[slug]/page.tsx
 import { getPostHtml, getAllPosts } from "@/lib/blog";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
-// Interfaz explícita para props
-interface BlogPostPageProps {
-  params: {
+// Actualiza la definición del tipo para reflejar que 'params' es una Promesa
+type Params = {
+  params: Promise<{
     slug: string;
-  };
-}
+  }>;
+};
 
-// Para generación estática de rutas
 export async function generateStaticParams() {
   const posts = getAllPosts();
   return posts.map((post) => ({ slug: post.slug }));
 }
 
-// Página de blog
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const slug = params.slug;
+export default async function BlogPostPage({ params }: Params) {
+  // Espera el objeto params para obtener el slug
+  const { slug } = await params;
 
+  // Usa el slug esperado
   const post = await getPostHtml(slug);
 
-  if (!post) {
-    return notFound();
-  }
+  if (!post) return notFound();
 
   const { metadata, contentHtml } = post;
 
   return (
-    <div className="pt-32 pb-20 px-6 max-w-3xl mx-auto">
+    <div className="max-w-3xl mx-auto px-6 pt-28 pb-16">
       {metadata.mainImage && (
         <Image
           src={metadata.mainImage}
           alt={metadata.title}
           width={800}
           height={400}
-          className="w-full rounded-lg mb-6 object-cover"
+          className="w-full h-auto rounded-lg object-cover mb-6"
         />
       )}
       <h1 className="text-3xl font-bold text-[#0D47A1] mb-2">{metadata.title}</h1>
