@@ -1,15 +1,17 @@
 import { getPostHtml, getAllPosts } from "@/lib/blog";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-// Se elimina la importación de PageProps y se define un tipo local para las props del componente.
-// import type { PageProps } from "next"; // Eliminado
+// Import PageProps for correct typing of component props in App Router
+// Using type-only import for PageProps from "next"
+import type { PageProps } from "next";
 
 // Definimos un tipo local para las props del componente, incluyendo los parámetros de ruta.
-type Props = {
-  params: {
-    slug: string;
-  };
-};
+// Eliminamos la definición de tipo 'Props' local anterior, ya que volveremos a usar PageProps.
+// type Props = {
+//   params: {
+//     slug: string;
+//   };
+// };
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -17,12 +19,16 @@ export async function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
 }
 
-// Define the BlogPostPage component using the locally defined Props type
+// Define the BlogPostPage component using the standard PageProps type for dynamic routes
+// PageProps is generic, specify the shape of the params using a more general type
 export default async function BlogPostPage({
-  params, // params will have the shape { slug: string } based on the route
-}: Props) { // Usamos el tipo Props definido localmente aquí
+  params, // params will have the shape { slug: string } based on the route and generateStaticParams
+}: PageProps<{ [param: string]: string | string[] }>) { // Usamos el tipo PageProps estándar para params dinámicos
+  // We know from generateStaticParams and the route structure that 'params.slug' will be a string
+  const slug = params.slug as string; // Cast to string for explicit type safety in usage
+
   // Fetch the blog post content based on the slug from the URL params
-  const post = await getPostHtml(params.slug);
+  const post = await getPostHtml(slug);
 
   // If the post is not found, render the Next.js notFound page (404)
   if (!post) {
