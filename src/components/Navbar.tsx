@@ -24,23 +24,23 @@ const Navbar = () => {
 
         {/* Menú escritorio */}
         <div className="hidden md:flex space-x-6 items-center">
-          <a href="#inicio" className="text-white hover:text-blue-100 transition duration-300">
+          <a href="/#inicio" className="text-white hover:text-blue-100 transition duration-300">
             Inicio
           </a>
-          <a href="#solucion" className="text-white hover:text-blue-100 transition duration-300">
+          <a href="/#solucion" className="text-white hover:text-blue-100 transition duration-300">
             Nuestra Solución
           </a>
-          <a href="#beneficios" className="text-white hover:text-blue-100 transition duration-300">
+          <a href="/#beneficios" className="text-white hover:text-blue-100 transition duration-300">
             Beneficios
           </a>
-          <a href="#casos-exito" className="text-white hover:text-blue-100 transition duration-300">
+          <a href="/#casos-exito" className="text-white hover:text-blue-100 transition duration-300">
             Casos de Éxito
           </a>
-          <a href="#por-que-nosotros" className="text-white hover:text-blue-100 transition duration-300">
+          <a href="/#por-que-nosotros" className="text-white hover:text-blue-100 transition duration-300">
             Por Qué Elegirnos
           </a>
           <a
-            href="#contacto"
+            href="/#contacto"
             className="bg-white hover:bg-blue-100 text-[#154EBF] font-semibold py-2 px-4 rounded-lg transition duration-300 shadow"
           >
             Contactar
@@ -77,11 +77,11 @@ const Navbar = () => {
       {/* Menú móvil */}
       {menuOpen && (
         <div className="md:hidden flex flex-col bg-[#154EBF] px-6 py-4 space-y-4 text-white">
-          <a href="#inicio" className="hover:text-blue-100 transition duration-300">Inicio</a>
-          <a href="#solucion" className="hover:text-blue-100 transition duration-300">Nuestra Solución</a>
-          <a href="#beneficios" className="hover:text-blue-100 transition duration-300">Beneficios</a>
-          <a href="#casos-exito" className="hover:text-blue-100 transition duration-300">Casos de Éxito</a>
-          <a href="#por-que-nosotros" className="hover:text-blue-100 transition duration-300">Por Qué Elegirnos</a>
+          <a href="/#inicio" className="hover:text-blue-100 transition duration-300">Inicio</a>
+          <a href="/#solucion" className="hover:text-blue-100 transition duration-300">Nuestra Solución</a>
+          <a href="/#beneficios" className="hover:text-blue-100 transition duration-300">Beneficios</a>
+          <a href="/#casos-exito" className="hover:text-blue-100 transition duration-300">Casos de Éxito</a>
+          <a href="/#por-que-nosotros" className="hover:text-blue-100 transition duration-300">Por Qué Elegirnos</a>
           <a
             href="#contacto"
             className="bg-white text-[#154EBF] text-center py-2 px-4 rounded-lg shadow hover:bg-blue-100 transition duration-300"
