@@ -43,14 +43,7 @@ Uno de los errores más comunes al hablar de tecnologías de comunicación IoT e
 
 ## Diferencias Clave entre LoRa y LoRaWAN
 
-| Característica       | LoRa                         | LoRaWAN                            |
-|----------------------|------------------------------|-------------------------------------|
-| Nivel de protocolo   | Físico (PHY)                 | Enlace y red (MAC + NET)           |
-| Función              | Transmisión de señal         | Gestión de red y datos             |
-| Control de acceso    | No definido                  | Definido por protocolo LoRaWAN     |
-| Seguridad            | No especificada              | AES-128 en red y aplicación        |
-| Topología            | Punto a punto (sin estándar) | Estrella de estrellas (gateways)   |
-| Estándar             | Propietario (Semtech)        | Abierto (LoRa Alliance)            |
+![Tabla comparativa entre LoRa y LoRaWAN](/images/Tabla-Lora.png)
 
 ---
 
