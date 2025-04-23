@@ -24,27 +24,27 @@ const Navbar = () => {
 
         {/* Menú escritorio */}
         <div className="hidden md:flex space-x-6 items-center">
-          <a href="/#inicio" className="text-white hover:text-blue-100 transition duration-300">
+          <Link href="/#inicio" className="text-white hover:text-blue-100 transition duration-300">
             Inicio
-          </a>
-          <a href="/#solucion" className="text-white hover:text-blue-100 transition duration-300">
+          </Link>
+          <Link href="/#solucion" className="text-white hover:text-blue-100 transition duration-300">
             Nuestra Solución
-          </a>
-          <a href="/#beneficios" className="text-white hover:text-blue-100 transition duration-300">
+          </Link>
+          <Link href="/#beneficios" className="text-white hover:text-blue-100 transition duration-300">
             Beneficios
-          </a>
-          <a href="/#casos-exito" className="text-white hover:text-blue-100 transition duration-300">
+          </Link>
+          <Link href="/#casos-exito" className="text-white hover:text-blue-100 transition duration-300">
             Casos de Éxito
-          </a>
-          <a href="/#por-que-nosotros" className="text-white hover:text-blue-100 transition duration-300">
+          </Link>
+          <Link href="/#por-que-nosotros" className="text-white hover:text-blue-100 transition duration-300">
             Por Qué Elegirnos
-          </a>
-          <a
+          </Link>
+          <Link
             href="/#contacto"
             className="bg-white hover:bg-blue-100 text-[#154EBF] font-semibold py-2 px-4 rounded-lg transition duration-300 shadow"
           >
             Contactar
-          </a>
+          </Link>
         </div>
 
         {/* Botón hamburguesa */}
@@ -77,17 +77,17 @@ const Navbar = () => {
       {/* Menú móvil */}
       {menuOpen && (
         <div className="md:hidden flex flex-col bg-[#154EBF] px-6 py-4 space-y-4 text-white">
-          <a href="/#inicio" className="hover:text-blue-100 transition duration-300">Inicio</a>
-          <a href="/#solucion" className="hover:text-blue-100 transition duration-300">Nuestra Solución</a>
-          <a href="/#beneficios" className="hover:text-blue-100 transition duration-300">Beneficios</a>
-          <a href="/#casos-exito" className="hover:text-blue-100 transition duration-300">Casos de Éxito</a>
-          <a href="/#por-que-nosotros" className="hover:text-blue-100 transition duration-300">Por Qué Elegirnos</a>
-          <a
-            href="#contacto"
+          <Link href="/#inicio" className="hover:text-blue-100 transition duration-300">Inicio</Link>
+          <Link href="/#solucion" className="hover:text-blue-100 transition duration-300">Nuestra Solución</Link>
+          <Link href="/#beneficios" className="hover:text-blue-100 transition duration-300">Beneficios</Link>
+          <Link href="/#casos-exito" className="hover:text-blue-100 transition duration-300">Casos de Éxito</Link>
+          <Link href="/#por-que-nosotros" className="hover:text-blue-100 transition duration-300">Por Qué Elegirnos</Link>
+          <Link
+            href="/#contacto"
             className="bg-white text-[#154EBF] text-center py-2 px-4 rounded-lg shadow hover:bg-blue-100 transition duration-300"
           >
             Contactar
-          </a>
+          </Link>
         </div>
       )}
     </header>
@@ -95,4 +95,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
