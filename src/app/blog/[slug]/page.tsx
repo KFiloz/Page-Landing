@@ -7,14 +7,9 @@ export async function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
 }
 
-type Props = {
-  params: {
-    slug: string;
-  };
-};
-
-export default async function BlogPostPage(props: Props) {
+export default async function BlogPostPage(props: { params: { slug: string } }) {
   const { slug } = props.params;
+
   const post = await getPostHtml(slug);
 
   if (!post) return notFound();
@@ -32,8 +27,13 @@ export default async function BlogPostPage(props: Props) {
           className="w-full rounded-lg mb-6 object-cover"
         />
       )}
+
       <h1 className="text-3xl font-bold text-[#0D47A1] mb-2">{metadata.title}</h1>
-      <p className="text-sm text-gray-500 mb-6">{metadata.author} · {metadata.date}</p>
+
+      <p className="text-sm text-gray-500 mb-6">
+        {metadata.author} · {metadata.date}
+      </p>
+
       <div
         className="prose prose-blue max-w-none"
         dangerouslySetInnerHTML={{ __html: contentHtml }}
