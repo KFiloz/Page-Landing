@@ -1,5 +1,29 @@
-/* Aquí puedes agregar estilos globales si los necesitas */
-
+/* globals.css */
+/* Estilos base de Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Estilos personalizados globales */
+
+html,
+body {
+  @apply bg-gray-50 text-gray-800 antialiased;
+}
+
+/* Clase para limitar y estilizar imágenes dentro del contenido del blog */
+.blog-content img {
+  @apply max-w-full h-auto mx-auto my-8 rounded-lg shadow;
+}
+
+/* Estilo para encabezados dentro del contenido del blog */
+.blog-content h1,
+.blog-content h2,
+.blog-content h3 {
+  @apply text-[#0D47A1] font-bold;
+}
+
+/* Enlaces en el contenido del blog */
+.blog-content a {
+  @apply text-blue-700 underline hover:text-blue-900 transition;
+}
